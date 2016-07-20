@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>School Particulars | Asmita</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <!-- <link rel="stylesheet" href="css/media.css"> -->
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+  </head>
+  <body>
+    <header class="top-header">
+      <div class="header-wrapper">
+        <div class="logo">
+          <p>ASMITA <span>(All Schools Monitoring, Individual Tracking &amp; Analysis)</span></p>
+        </div>
+        <div class="language-picker">
+          <a href="#" id="toggle"><i class="fa fa-language"></i> English</a>
+          <ul class="languages" id="more-lang">
+            <li><a href="" class="active">English</a></li>
+            <li><a href="">Hindi</a></li>
+            <li><a href="">Punjabi</a></li>
+            <li><a href="">Urdu</a></li>
+            <li><a href="">Sanskrit</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="container school-particular-page">
+      <div class="particular">
+        <div class="particular-title">
+          <h2>School Particular</h2>
+        </div>
+        <div class="progress-block">
+          <ul class="progressbar">
+            <!-- Need to toggle classes (progress-started, progress-completed) -->
+            <li class="progress-completed">
+              <span class="circle start"><i class="sub-text">School Details</i></span>
+              <span class="progress-start" style="width: 100%"></span>
+            </li>
+            <li class="progress-completed">
+              <span class="circle start"><i class="sub-text">School Particular</i></span>
+              <span class="progress-start" style="width: 100%"></span>
+              
+            </li>
+            <li class="progress-started">
+              <span class="circle start"><i class="sub-text">School Details</i></span>
+              <span class="progress-start" style="width: 0%"></span>
+              <span class="circle end"><i class="sub-text">Staff &amp; Funds</i></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="form-wrapper">
+        <div class="inner-form-wrapper">
+          <form action="" method="POST" id="school_particular">
+            <div class="input-wrapper">
+              <label class="input-title">U-Dise code</label>
+              <div class="input-code-wrapper">
+                <div class="input-code">
+                  <input type="number" name="state-code" maxlength="1" placeholder="x">
+                  <input type="number" name="state-code" maxlength="1" placeholder="x">
+                </div>
+                <span>State code</span>
+              </div>
+              <div class="input-code-wrapper">
+                <div class="input-code">
+                  <input type="number" name="district-code" maxlength="1" placeholder="x">
+                  <input type="number" name="district-code" maxlength="1" placeholder="x">
+                </div>
+                <span>District code</span>
+              </div>
+              <div class="input-code-wrapper">
+                <div class="input-code">
+                  <input type="number" name="block-code" maxlength="1" placeholder="x">
+                  <input type="number" name="block-code" maxlength="1" placeholder="x">
+                </div>
+                <span>Block code</span>
+              </div>
+              <div class="input-code-wrapper">
+                <div class="input-code">
+                  <input type="number" name="ward-code" maxlength="1" placeholder="x">
+                  <input type="number" name="ward-code" maxlength="1" placeholder="x">
+                  <input type="number" name="ward-code" maxlength="1" placeholder="x">
+                </div>
+                <span>Village/Ward code</span>
+              </div>
+              <div class="input-code-wrapper">
+                <div class="input-code">
+                  <input type="number" name="school-code" maxlength="1" placeholder="x">
+                  <input type="number" name="school-code" maxlength="1" placeholder="x">
+                </div>
+                <span>School code</span>
+              </div>
+              <!-- <div class="validate">
+                <span class="correct"><img src="images/tick.png"></span>
+                <span class="wrong"><img src="images/cross.png"></span>
+                </div> -->
+            </div>
+            <div class="input-wrapper">
+              <label class="input-title">Academic year</label>
+              <div class="input-code-wrapper">
+                <div class="input-code">
+                  <input type="number" name="starting-year" maxlength="1" value="2" disabled>
+                  <input type="number" name="starting-year" maxlength="1" value="0" disabled>
+                  <input type="number" name="starting-year" maxlength="1" placeholder="x">
+                  <input type="number" name="starting-year" maxlength="1" placeholder="x">
+                </div>
+              </div>
+              <span class="seprate">-</span>
+              <div class="input-code-wrapper">
+                <div class="input-code">
+                  <input type="number" name="ending-year" maxlength="1" value="2" disabled>
+                  <input type="number" name="ending-year" maxlength="1" value="0" disabled>
+                  <input type="number" name="ending-year" maxlength="1" placeholder="x">
+                  <input type="number" name="ending-year" maxlength="1" placeholder="x">
+                </div>
+              </div>
+            </div>
+            <div class="input-wrapper">
+              <label class="input-title">School name</label>
+              <div class="row">
+                <div class="input-text">
+                  <input type="text" id="schoolNameText" data-lang="language-convert" placeholder="Enter in English" >
+                </div>
+                <div class="input-text">
+                  <input type="text" id="schoolNameTextRegional" class="disabled-input" placeholder="Regional Language" disabled>
+                </div>
+              </div>
+            </div>
+            <!-- Location -->
+            <section class="Location">
+              <h3 class="section-title">Location</h3>
+              <div class="input-wrapper">
+                <label class="input-title">School location</label>
+                <div class="input-code-wrapper">
+                  <div class="input-code location-radio">
+                    <input id="rural" type="radio" name="location-name" value="rural" checked="checked">
+                    <label for="rural">Rural</label>
+                    <input id="urban" type="radio" name="location-name" value="urban">
+                    <label for="urban">Urban</label>
+                  </div>
+                </div>
+              </div>
+              <div class="input-wrapper">
+                <label class="input-title">Habitation name</label>
+                <div class="row">
+                  <div class="input-text">
+                    <input type="text" data-lang="language-convert" placeholder="Enter in English">
+                  </div>
+                  <div class="input-text">
+                    <input type="text" class="disabled-input" placeholder="Regional Language" disabled>
+                  </div>
+                </div>
+              </div>
+              <div class="input-wrapper">
+                <label class="input-title">Village name</label>
+                <div class="row">
+                  <div class="input-text">
+                    <input type="text" data-lang="language-convert" placeholder="Enter in English">
+                  </div>
+                  <div class="input-text">
+                    <input type="text" class="disabled-input" placeholder="Regional Language" disabled>
+                  </div>
+                </div>
+              </div>
+              <div class="input-wrapper">
+                <label class="input-title">Pincode</label>
+                <div class="input-code-wrapper">
+                  <div class="input-code">
+                    <input type="number" name="pincode" maxlength="1" placeholder="x">
+                    <input type="number" name="pincode" maxlength="1" placeholder="x">
+                    <input type="number" name="pincode" maxlength="1" placeholder="x">
+                    <input type="number" name="pincode" maxlength="1" placeholder="x">
+                    <input type="number" name="pincode" maxlength="1" placeholder="x">
+                    <input type="number" name="pincode" maxlength="1" placeholder="x">
+                  </div>
+                </div>
+              </div>
+              <div class="input-wrapper">
+                <label class="input-title">
+                  Village Panchayat
+                  <div class="tooltip-help">
+                    <span class="help-icon fa fa-question-circle-o">
+                      <div class="tooltip">
+                        <span>lorem ipsum doler sit amet</span>
+                      </div>
+                    </span>
+                  </div>
+                </label>
+                <div class="row">
+                  <div class="input-text">
+                    <input type="text" data-lang="language-convert" placeholder="Enter in English">
+                  </div>
+                  <div class="input-text">
+                    <input type="text" class="disabled-input" placeholder="Regional Language" disabled>
+                  </div>
+                </div>
+              </div>
+              <div class="input-wrapper">
+                <label class="input-title">
+                  Name of Cluster Resoure Centre (CRC)
+                  <div class="tooltip-help">
+                    <span class="help-icon fa fa-question-circle-o">
+                      <div class="tooltip">
+                        <span>Lorem ipsum dolor sit amet, solum postulant contentiones vix id, ius ut minimum maiestatis efficiendiamet</span>
+                      </div>
+                    </span>
+                  </div>
+                </label>
+                <div class="row">
+                  <div class="input-text">
+                    <input type="text" name="crc" data-lang="language-convert" placeholder="Enter in English">
+                  </div>
+                  <div class="input-text">
+                    <input type="text" name="crc" class="disabled-input" placeholder="Regional Language" disabled>
+                  </div>
+                </div>
+              </div>
+              <div class="input-wrapper">
+                <label class="input-title">Name of CD block/Mandal/Taluka</label>
+                <div class="row">
+                  <div class="input-text">
+                    <input type="text" data-lang="language-convert" placeholder="Enter in English">
+                  </div>
+                  <div class="input-text">
+                    <input type="text" class="disabled-input" placeholder="Regional Language"  disabled>
+                  </div>
+                </div>
+              </div>
+              <div class="input-wrapper">
+                <label class="input-title">Name of Educational zone/Mandal/Taluka</label>
+                <div class="row">
+                  <div class="input-text">
+                    <input type="text" data-lang="language-convert" placeholder="Enter in English">
+                  </div>
+                  <div class="input-text">
+                    <input type="text" class="disabled-input" placeholder="Regional Language" disabled>
+                  </div>
+                </div>
+              </div>
+              <div class="input-wrapper">
+                <label class="input-title">Assembly constituency</label>
+                <div class="row">
+                  <div class="input-text">
+                    <input type="text" data-lang="language-convert" placeholder="Enter in English">
+                  </div>
+                  <div class="input-text">
+                    <input type="text" class="disabled-input" placeholder="Regional Language" disabled>
+                  </div>
+                </div>
+              </div>
+              <div class="input-wrapper">
+                <label class="input-title">Municipality</label>
+                <div class="row">
+                  <div class="input-text">
+                    <input type="text" data-lang="language-convert"  placeholder="Enter in English">
+                  </div>
+                  <div class="input-text">
+                    <input type="text" class="disabled-input" placeholder="Regional Language" disabled>
+                  </div>
+                </div>
+              </div>
+              <div class="input-wrapper">
+                <label class="input-title">City</label>
+                <div class="row">
+                  <div class="input-text">
+                    <input type="text" data-lang="language-convert" placeholder="Enter in English">
+                  </div>
+                  <div class="input-text">
+                    <input type="text" class="disabled-input" placeholder="Regional Language" disabled>
+                  </div>
+                </div>
+              </div>
+              <div class="input-wrapper">
+                <label class="input-title">Geographical location of school, if available</label>
+                <div class="row">
+                  <div class="input-text">
+                    <input type="text" data-lang="language-convert" placeholder="Enter in English">
+                    <span class="fa fa-location-arrow input-icon"></span>
+                  </div>
+                  <div class="input-text">
+                    <input type="text" name="geo-location" class="disabled-input" placeholder="Regional Language" disabled>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- Connect -->
+            <section class="academic">
+              <h3 class="section-title">Connect</h3>
+              <div class="input-wrapper">
+                <label class="input-title">Office/Head of school</label>
+                <div class="input-code-wrapper">
+                  <div class="input-code">
+                    <input type="number" name="std-code" maxlength="1" placeholder="x">
+                    <input type="number" name="std-code" maxlength="1" placeholder="x">
+                    <input type="number" name="std-code" maxlength="1" placeholder="x">
+                  </div>
+                  <span>STD code</span>
+                </div>
+                <div class="input-code-wrapper">
+                  <div class="input-code">
+                    <input type="number" name="phone-num" maxlength="1" placeholder="x">
+                    <input type="number" name="phone-num" maxlength="1" placeholder="x">
+                    <input type="number" name="phone-num" maxlength="1" placeholder="x">
+                    <input type="number" name="phone-num" maxlength="1" placeholder="x">
+                    <input type="number" name="phone-num" maxlength="1" placeholder="x">
+                    <input type="number" name="phone-num" maxlength="1" placeholder="x">
+                  </div>
+                  <span>Phone number</span>
+                </div>
+              </div>
+              <div class="input-wrapper">
+                <div class="input-code-wrapper">
+                  <div class="input-code">
+                    <input type="number" name="mobile-num" maxlength="1" placeholder="x">
+                    <input type="number" name="mobile-num" maxlength="1" placeholder="x">
+                    <input type="number" name="mobile-num" maxlength="1" placeholder="x">
+                    <input type="number" name="mobile-num" maxlength="1" placeholder="x">
+                    <input type="number" name="mobile-num" maxlength="1" placeholder="x">
+                    <input type="number" name="mobile-num" maxlength="1" placeholder="x">
+                    <input type="number" name="mobile-num" maxlength="1" placeholder="x">
+                    <input type="number" name="mobile-num" maxlength="1" placeholder="x">
+                    <input type="number" name="mobile-num" maxlength="1" placeholder="x">
+                    <input type="number" name="mobile-num" maxlength="1" placeholder="x">
+                  </div>
+                  <span>Mobile number</span>
+                </div>
+              </div>
+              <div class="input-wrapper">
+                <label class="input-title">Respondant</label>
+                <div class="input-code-wrapper">
+                  <div class="input-code">
+                    <input type="number" name="std-code" maxlength="1" placeholder="x">
+                    <input type="number" name="std-code" maxlength="1" placeholder="x">
+                    <input type="number" name="std-code" maxlength="1" placeholder="x">
+                  </div>
+                  <span>STD code</span>
+                </div>
+                <div class="input-code-wrapper">
+                  <div class="input-code">
+                    <input type="number" name="phone-num" maxlength="1" placeholder="x">
+                    <input type="number" name="phone-num" maxlength="1" placeholder="x">
+                    <input type="number" name="phone-num" maxlength="1" placeholder="x">
+                    <input type="number" name="phone-num" maxlength="1" placeholder="x">
+                    <input type="number" name="phone-num" maxlength="1" placeholder="x">
+                    <input type="number" name="phone-num" maxlength="1" placeholder="x">
+                  </div>
+                  <span>Phone number</span>
+                </div>
+              </div>
+              <div class="input-wrapper">
+                <div class="input-code-wrapper">
+                  <div class="input-code">
+                    <input type="number" name="mobile-num" maxlength="1" placeholder="x">
+                    <input type="number" name="mobile-num" maxlength="1" placeholder="x">
+                    <input type="number" name="mobile-num" maxlength="1" placeholder="x">
+                    <input type="number" name="mobile-num" maxlength="1" placeholder="x">
+                    <input type="number" name="mobile-num" maxlength="1" placeholder="x">
+                    <input type="number" name="mobile-num" maxlength="1" placeholder="x">
+                    <input type="number" name="mobile-num" maxlength="1" placeholder="x">
+                    <input type="number" name="mobile-num" maxlength="1" placeholder="x">
+                    <input type="number" name="mobile-num" maxlength="1" placeholder="x">
+                    <input type="number" name="mobile-num" maxlength="1" placeholder="x">
+                  </div>
+                  <span>Mobile number</span>
+                </div>
+              </div>
+              <div class="input-wrapper">
+                <label class="input-title">School Email</label>
+                <div class="row col-6">
+                  <div class="input-text">
+                    <input type="text" name="school-mail" placeholder="eg:abc@domainname.com">
+                    <span class="fa fa-envelope input-icon"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="input-wrapper">
+                <label class="input-title">School Website</label>
+                <div class="row col-6">
+                  <div class="input-text">
+                    <input type="text" name="school-website" placeholder="eg:www.schoolname.com">
+                    <span class="fa fa-globe input-icon"></span>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <div class="action row">
+              <button class="btn btn-primary" name="submit-form">Next<i class="next-icon fa fa-arrow-circle-right"></i></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!-- vendor js -->
+    <script src="js/vendor/jquery-1.12.0.min.js"></script>
+    <!-- language translation library js -->
+    <script type="text/javascript" src="js/vendor/pramukhime.js"></script>
+    <script type="text/javascript" src="js/vendor/pramukhindic.js"></script>
+    <script src="js/custom.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,72 @@
+// Toggle hide/show language
+$("#toggle").click(function(){
+    $("#more-lang").slideToggle();
+    $("#toggle").css("content", "\f106");
+});
+
+
+// Toggle active class in languages
+$('.languages li a').click(function(e) {
+    e.preventDefault(); //prevent the link from being followed
+    $('.languages li a').removeClass('active');
+    $(this).addClass('active');
+});
+
+$(document).ready(function(){
+
+    /* English to Regional language translation */
+    pramukhIME.addLanguage(PramukhIndic, "hindi");
+    /*pramukhIME.enable('schoolNameTextRegional');*/
+
+    $('input[data-lang="language-convert"]').on('keyup', function(){
+        var InputString =  $(this).val();
+        var app = pramukhIME.convert(InputString, 'english', 'hindi');
+        $(this).parent().siblings().find('input').val(app);
+    });    
+
+
+    /* input single numeric value */
+    $('.input-code input').on('keyup', function(){
+        var inputVal = $(this).val().length;
+        console.log(inputVal);
+        if(inputVal > 0){
+            $(this).blur();
+            $(this).next().focus();
+        }
+        
+    });
+});
+
+
+
+/*$('input,textarea').focus(function() {
+        $(this).data('placeholder', $(this).attr('placeholder'))
+            .attr('placeholder', '');
+    }).blur(function() {
+        $(this).attr('placeholder', $(this).data('placeholder'));
+    });
+
+    var container = document.getElementsByClassName("input-code")[0];
+    container.onkeyup = function(e) {
+        var target = e.srcElement;
+        var maxLength = parseInt(target.attributes["maxlength"].value, 10);
+        var myLength = target.value.length;
+        if (myLength >= maxLength) {
+            var next = target;
+            while (next = next.nextElementSibling) {
+                if (next == null)
+                    break;
+                if (next.tagName.toLowerCase() == "input") {
+                    next.focus();
+                    break;
+                }
+            }
+        }
+    }
+
+
+
+    $(".original").on('keyup', function(){
+        var originalVal = $(this).val();
+        $(this).siblings().val(originalVal);
+    });*/
