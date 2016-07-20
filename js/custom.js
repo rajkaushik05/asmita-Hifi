@@ -17,7 +17,17 @@ $(document).ready(function(){
     /* English to Regional language translation */
     var regionalLanguage = "hindi";
     pramukhIME.addLanguage(PramukhIndic, regionalLanguage);
-    /*pramukhIME.enable('schoolNameTextRegional');*/
+    pramukhIME.enable('schoolNameTextRegional');
+    pramukhIME.enable('habitationNameTextRegional');
+    pramukhIME.enable('villageNameTextRegional');
+    pramukhIME.enable('villagePanchayatTextRegional');
+    pramukhIME.enable('crcTextRegional');
+    pramukhIME.enable('nameOfCDBolckTextRegional');
+    pramukhIME.enable('eductionalZoneTextRegional');
+    pramukhIME.enable('assemblyConstituencyTextRegional');
+    pramukhIME.enable('municipalityTextRegional');
+    pramukhIME.enable('cityTextRegional');
+    pramukhIME.enable('geographicalTextRegional');
 
     $('input[data-lang="language-convert"]').on('keyup', function(){
         var InputString =  $(this).val();
