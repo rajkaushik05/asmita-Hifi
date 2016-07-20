@@ -15,12 +15,13 @@ $('.languages li a').click(function(e) {
 $(document).ready(function(){
 
     /* English to Regional language translation */
-    pramukhIME.addLanguage(PramukhIndic, "hindi");
+    var regionalLanguage = "hindi";
+    pramukhIME.addLanguage(PramukhIndic, regionalLanguage);
     /*pramukhIME.enable('schoolNameTextRegional');*/
 
     $('input[data-lang="language-convert"]').on('keyup', function(){
         var InputString =  $(this).val();
-        var app = pramukhIME.convert(InputString, 'english', 'hindi');
+        var app = pramukhIME.convert(InputString, 'english', regionalLanguage);
         $(this).parent().siblings().find('input').val(app);
     });    
 
@@ -28,12 +29,10 @@ $(document).ready(function(){
     /* input single numeric value */
     $('.input-code input').on('keyup', function(){
         var inputVal = $(this).val().length;
-        console.log(inputVal);
         if(inputVal > 0){
             $(this).blur();
             $(this).next().focus();
         }
-        
     });
 });
 
@@ -63,10 +62,4 @@ $(document).ready(function(){
             }
         }
     }
-
-
-
-    $(".original").on('keyup', function(){
-        var originalVal = $(this).val();
-        $(this).siblings().val(originalVal);
-    });*/
+*/
