@@ -1,12 +1,6 @@
 @media only screen and (max-width:1100px) {
-    .input-code-wrapper {
-        margin-bottom: 15px;
-    }
-    .inner-form-wrapper input[type=text]:nth-child(2n) {
-        margin-top: 15px;
-    }
     .input-wrapper {
-        margin-bottom: 10px;
+        margin-bottom: 25px;
     }
     .section-title {
         margin: 10px 0 20px 0;
@@ -30,10 +24,33 @@
 @media only screen and (max-width:769px) {
     .row {
         flex-wrap: wrap;
-        width: 90%;
+    }
+    .input-text {
+        margin-right: 0;
+        width: 100%;
     }
 
+    .input-text input {
+        margin-bottom: 20px;
+    }
 }
+
+@media only screen and (max-width: 1000px) {
+    .inner-form-wrapper input[type=number] {
+        width: 50px;
+    }    
+
+    .school-particular-page .row {
+        padding-right: 50px;
+    }
+
+    .row .field-status-icon {
+        position: absolute;
+        top: 35px;
+        right: 0px;
+    }
+}
+
 
 @media only screen and (max-width: 1000px) {
 
