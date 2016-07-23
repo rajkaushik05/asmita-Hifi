@@ -259,14 +259,12 @@ $(document).ready(function(){
             progressStatus = Math.round(progressStatus);
             if(progressStatus > 0 && progressStatus < 99){
                 schoolParticularProgress.addClass('progress-started'); 
-                schoolParticularProgressStatus.css('width', progressStatus + '%');  
             } else if(progressStatus == 100){
                 schoolParticularProgress.removeClass().addClass('progress-completed'); 
-            }
-
-            else {
+            } else {
                 schoolParticularProgress.removeClass('progress-started'); 
             }
+            schoolParticularProgressStatus.css('width', progressStatus + '%');  
         }
 
         $('#schoolParticularPage input').on('blur', function(){
