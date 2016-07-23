@@ -32,7 +32,7 @@
         </div>
       </div>
     </header>
-    <div class="container school-particular-page">
+    <div class="container school-particular-page" id="schoolParticularPage">
       <div class="particular">
         <div class="particular-title">
           <h2>School Particular</h2>
@@ -40,16 +40,16 @@
         <div class="progress-block">
           <ul class="progressbar">
             <!-- Need to toggle classes (progress-started, progress-completed) -->
-            <li class="progress-completed" id="schoolParticularProgress">
+            <li class="" id="schoolParticularProgress">
               <span class="circle start"><i class="sub-text">School Details</i></span>
-              <span class="progress-start" style="width: 100%"></span>
+              <span class="progress-start" style="width: 0%"></span>
             </li>
-            <li class="progress-completed">
+            <li class="">
               <span class="circle start"><i class="sub-text">School Particular</i></span>
-              <span class="progress-start" style="width: 100%"></span>
+              <span class="progress-start" style="width: 0%"></span>
               
             </li>
-            <li class="progress-started">
+            <li class="">
               <span class="circle start"><i class="sub-text">School Details</i></span>
               <span class="progress-start" style="width: 0%"></span>
               <span class="circle end"><i class="sub-text">Staff &amp; Funds</i></span>
@@ -60,7 +60,7 @@
       <div class="form-wrapper">
         <div class="inner-form-wrapper">
           <form action="" method="POST" id="school_particular">
-            <div class="input-wrapper row u-dise-code">
+            <div class="input-wrapper row u-dise-code" id="uDiseCodeFields">
               <label class="input-title">U-Dise code <span class="star">*</span></label>
               <div class="input-code-wrapper">
                 <div class="input-code">
@@ -99,43 +99,46 @@
                 <span>School code</span>
               </div>
               <!-- toggle success-icon and error-icon -->
-              <span class="field-status-icon success-icon"></span>
+              <span class="field-status-icon "></span>
               <p class="field-error">Please enter valid input</p>
             </div>
-            <div class="input-wrapper">
+
+            <div class="input-wrapper row" id="academicYearFields">
               <label class="input-title">Academic year <span class="star">*</span></label>
               <div class="input-code-wrapper">
                 <div class="input-code">
-                  <input type="number" name="starting-year" maxlength="1" value="2" disabled>
-                  <input type="number" name="starting-year" maxlength="1" value="0" disabled>
-                  <input type="number" name="starting-year" maxlength="1" placeholder="x">
-                  <input type="number" name="starting-year" maxlength="1" placeholder="x">
+                  <input type="number" maxlength="1" value="2" disabled>
+                  <input type="number" maxlength="1" value="0" disabled>
+                  <input type="number" name="starting-year" value="1" maxlength="1" placeholder="x">
+                  <input type="number" name="starting-year" value="6" maxlength="1" placeholder="x">
                 </div>
               </div>
               <span class="seprate">-</span>
               <div class="input-code-wrapper">
                 <div class="input-code">
-                  <input type="number" name="ending-year" maxlength="1" value="2" disabled>
-                  <input type="number" name="ending-year" maxlength="1" value="0" disabled>
-                  <input type="number" name="ending-year" maxlength="1" placeholder="x">
-                  <input type="number" name="ending-year" maxlength="1" placeholder="x">
+                  <input type="number" maxlength="1" value="2" disabled>
+                  <input type="number" maxlength="1" value="0" disabled>
+                  <input type="number" name="ending-year" value="1" maxlength="1" placeholder="x">
+                  <input type="number" name="ending-year" value="7" maxlength="1" placeholder="x">
                 </div>
               </div>
+              <span class="field-status-icon "></span>
               <p class="field-error">Please enter valid input</p>
             </div>
-            <div class="input-wrapper">
-              <div class="row">
-                <div class="input-text">
-                  <label class="input-title">School name <span class="star">*</span></label>
-                  <input type="text" id="schoolNameText" data-lang="language-convert" placeholder="Enter in English" >
-                </div>
-                <div class="input-text">
-                  <label class="input-title" data-lang="label-language-convert">skool kaa naam</label>
-                  <input type="text" id="schoolNameTextRegional" class="disabled-input" placeholder="Regional Language" >
-                </div>
-                <p class="field-error">Please enter school name</p>
+
+            <div class="input-wrapper row" id="schoolNameField">
+              <div class="input-text">
+                <label class="input-title">School name <span class="star">*</span></label>
+                <input type="text" id="schoolNameText" value="Geeta" data-lang="language-convert" placeholder="Enter in English" >
               </div>
+              <div class="input-text">
+                <label class="input-title" data-lang="label-language-convert">skool kaa naam</label>
+                <input type="text" id="schoolNameTextRegional" class="disabled-input" placeholder="Regional Language" >
+              </div>
+              <span class="field-status-icon "></span>
+              <p class="field-error">Please enter school name</p>
             </div>
+
             <!-- Location -->
             <section class="Location">
               <h3 class="section-title">Location</h3>
@@ -150,32 +153,32 @@
                   </div>
                 </div>
               </div>
-              <div class="input-wrapper">
-                <div class="row">
-                  <div class="input-text">
-                    <label class="input-title">Habitation name</label>
-                    <input type="text" id="habitationNameText" data-lang="language-convert" placeholder="Enter in English">
-                  </div>
-                  <div class="input-text">
-                    <label class="input-title" data-lang="label-language-convert">nivaas  sthaan kaa naam</label>
-                    <input type="text" id="habitationNameTextRegional" class="disabled-input" placeholder="Regional Language">
-                  </div>
+
+              <div class="input-wrapper row">
+                <div class="input-text">
+                  <label class="input-title">Habitation name</label>
+                  <input type="text" id="habitationNameText" data-lang="language-convert" placeholder="Enter in English">
                 </div>
-              </div>
-              <div class="input-wrapper">
-                <div class="row">
-                  <div class="input-text">
-                    <label class="input-title">Village name <span class="star">*</span></label>
-                    <input type="text" id="villageNameText" data-lang="language-convert" placeholder="Enter in English">
-                  </div>
-                  <div class="input-text">
-                    <label class="input-title" data-lang="label-language-convert">gaaM~v kaa naam</label>
-                    <input type="text" id="villageNameTextRegional" class="disabled-input" placeholder="Regional Language">
-                  </div>
-                  <p class="field-error">Please enter village name</p>
+                <div class="input-text">
+                  <label class="input-title" data-lang="label-language-convert">nivaas  sthaan kaa naam</label>
+                  <input type="text" id="habitationNameTextRegional" class="disabled-input" placeholder="Regional Language">
                 </div>
+                <span class="field-status-icon "></span>
               </div>
-              <div class="input-wrapper">
+              
+              <div class="input-wrapper row">
+                <div class="input-text">
+                  <label class="input-title">Village name </label>
+                  <input type="text" id="villageNameText" data-lang="language-convert" placeholder="Enter in English">
+                </div>
+                <div class="input-text">
+                  <label class="input-title" data-lang="label-language-convert">gaaM~v kaa naam</label>
+                  <input type="text" id="villageNameTextRegional" class="disabled-input" placeholder="Regional Language">
+                </div>
+                <span class="field-status-icon "></span>
+              </div>
+
+              <div class="input-wrapper row" id="villagePinCodeFields">
                 <label class="input-title">Pincode <span class="star">*</span></label>
                 <div class="input-code-wrapper">
                   <div class="input-code">
@@ -187,13 +190,14 @@
                     <input type="number" name="pincode" maxlength="1" placeholder="x">
                   </div>
                 </div>
+                <span class="field-status-icon "></span>
                 <p class="field-error">Please enter area pincode</p>
               </div>
-              <div class="input-wrapper">
-                <div class="row">
-                  <div class="input-text">
+
+              <div class="input-wrapper row" id="villagePanchayatField">
+                <div class="input-text">
                     <label class="input-title">
-                      Village Panchayat
+                      Village Panchayat <span class="star">*</span>
                       <div class="tooltip-help">
                         <span class="help-icon fa fa-question-circle-o">
                           <div class="tooltip">
@@ -208,130 +212,137 @@
                     <label class="input-title" data-lang="label-language-convert">gaaM~v paMchaayat</label>
                     <input type="text" id="villagePanchayatTextRegional" class="disabled-input" placeholder="Regional Language">
                   </div>
-                </div>
+                  <span class="field-status-icon "></span>
+                  <p class="field-error">Please enter village panchayat</p>
               </div>
-              <div class="input-wrapper">
-                <div class="row">
-                  <div class="input-text">
-                    <label class="input-title">
-                      Name of Cluster Resoure Centre (CRC)
-                      <div class="tooltip-help">
-                        <span class="help-icon fa fa-question-circle-o">
-                          <div class="tooltip">
-                            <span>Lorem ipsum dolor sit amet, solum postulant contentiones vix id, ius ut minimum maiestatis efficiendiamet</span>
-                          </div>
-                        </span>
-                      </div>
-                    </label>
-                    <input type="text" id="crcText" data-lang="language-convert" placeholder="Enter in English">
-                  </div>
-                  <div class="input-text">
-                    <label class="input-title" data-lang="label-language-convert">klasTar  risors seMTar kaa naam</label>
-                    <input type="text" id="crcTextRegional" class="disabled-input" placeholder="Regional Language">
-                  </div>
+
+              <div class="input-wrapper row" id="crcfields">
+                <div class="input-text">
+                  <label class="input-title">
+                    Name of Cluster Resoure Centre (CRC) <span class="star">*</span>
+                    <div class="tooltip-help">
+                      <span class="help-icon fa fa-question-circle-o">
+                        <div class="tooltip">
+                          <span>Lorem ipsum dolor sit amet, solum postulant contentiones vix id, ius ut minimum maiestatis efficiendiamet</span>
+                        </div>
+                      </span>
+                    </div>
+                  </label>
+                  <input type="text" id="crcText" data-lang="language-convert" placeholder="Enter in English">
                 </div>
+                <div class="input-text">
+                  <label class="input-title" data-lang="label-language-convert">klasTar  risors seMTar kaa naam</label>
+                  <input type="text" id="crcTextRegional" class="disabled-input" placeholder="Regional Language">
+                </div>
+                <span class="field-status-icon "></span>
+                <p class="field-error">Please enter Cluster Resoure Centre</p>
               </div>
-              <div class="input-wrapper">
-                <div class="row">
-                  <div class="input-text">
-                    <label class="input-title">Name of CD block/Mandal/Taluka <span class="star">*</span></label>
-                    <input type="text" id="nameOfCDBolckText" data-lang="language-convert" placeholder="Enter in English">
-                  </div>
-                  <div class="input-text">
-                    <label class="input-title" data-lang="label-language-convert">seeDee blOk / maMDal / taallukaa kaa naam</label>
-                    <input type="text" id="nameOfCDBolckTextRegional" class="disabled-input" placeholder="Regional Language">
-                  </div>
-                  <p class="field-error">Please enter CD block / Mandal / Taluka</p>
+
+              <div class="input-wrapper row" id="nameOfCDBolckField">
+                <div class="input-text">
+                  <label class="input-title">Name of CD block/Mandal/Taluka <span class="star">*</span></label>
+                  <input type="text" id="nameOfCDBolckText" data-lang="language-convert" placeholder="Enter in English">
                 </div>
+                <div class="input-text">
+                  <label class="input-title" data-lang="label-language-convert">seeDee blOk / maMDal / taallukaa kaa naam</label>
+                  <input type="text" id="nameOfCDBolckTextRegional" class="disabled-input" placeholder="Regional Language">
+                </div>
+                <span class="field-status-icon "></span>
+                <p class="field-error">Please enter CD block / Mandal / Taluka</p>
               </div>
-              <div class="input-wrapper">
-                <div class="row">
-                  <div class="input-text">
-                    <label class="input-title">Name of Educational zone/Mandal/Taluka <span class="star">*</span></label>
-                    <input type="text" id="eductionalZoneText" data-lang="language-convert" placeholder="Enter in English">
-                  </div>
-                  <div class="input-text">
-                    <label class="input-title" data-lang="label-language-convert">shaikShaNik kShetr / maMDal / taallukaa kaa naam</label>
-                    <input type="text" id="eductionalZoneTextRegional" class="disabled-input" placeholder="Regional Language">
-                  </div>
+
+              <div class="input-wrapper row" id="educationalZoneField">                
+                <div class="input-text">
+                  <label class="input-title">Name of Educational zone/Mandal/Taluka <span class="star">*</span></label>
+                  <input type="text" id="educationalZoneText" data-lang="language-convert" placeholder="Enter in English">
                 </div>
+                <div class="input-text">
+                  <label class="input-title" data-lang="label-language-convert">shaikShaNik kShetr / maMDal / taallukaa kaa naam</label>
+                  <input type="text" id="eductionalZoneTextRegional" class="disabled-input" placeholder="Regional Language">
+                </div>
+                <span class="field-status-icon "></span>
+                <p class="field-error">Please enter Educational zone/Mandal/Taluka</p>
               </div>
-              <div class="input-wrapper">
-                <div class="row">
-                  <div class="input-text">
-                    <label class="input-title">Assembly constituency</label>
-                    <input type="text" id="assemblyConstituencyText" data-lang="language-convert" placeholder="Enter in English">
-                  </div>
-                  <div class="input-text">
-                    <label class="input-title" data-lang="label-language-convert">sabhaa nirvaachan kShetr</label>
-                    <input type="text" id="assemblyConstituencyTextRegional" class="disabled-input" placeholder="Regional Language">
-                  </div>
+
+              <div class="input-wrapper row">
+                <div class="input-text">
+                  <label class="input-title">Assembly constituency</label>
+                  <input type="text" id="assemblyConstituencyText" data-lang="language-convert" placeholder="Enter in English">
                 </div>
+                <div class="input-text">
+                  <label class="input-title" data-lang="label-language-convert">sabhaa nirvaachan kShetr</label>
+                  <input type="text" id="assemblyConstituencyTextRegional" class="disabled-input" placeholder="Regional Language">
+                </div>
+                <span class="field-status-icon "></span>
               </div>
-              <div class="input-wrapper">
-                <div class="row">
-                  <div class="input-text">
-                    <label class="input-title">Municipality</label>
-                    <input type="text" id="municipalityText" data-lang="language-convert"  placeholder="Enter in English">
-                  </div>
-                  <div class="input-text">
-                    <label class="input-title" data-lang="label-language-convert">nagar paalikaa</label>
-                    <input type="text" id="municipalityTextRegional" class="disabled-input" placeholder="Regional Language">
-                  </div>
+
+              <div class="input-wrapper row">
+                <div class="input-text">
+                  <label class="input-title">Municipality</label>
+                  <input type="text" id="municipalityText" data-lang="language-convert"  placeholder="Enter in English">
                 </div>
+                <div class="input-text">
+                  <label class="input-title" data-lang="label-language-convert">nagar paalikaa</label>
+                  <input type="text" id="municipalityTextRegional" class="disabled-input" placeholder="Regional Language">
+                </div>
+                <span class="field-status-icon "></span>
               </div>
-              <div class="input-wrapper">
-                <div class="row">
-                  <div class="input-text">
-                    <label class="input-title">City <span class="star">*</span></label>
-                    <input type="text" id="cityText" data-lang="language-convert" placeholder="Enter in English">
-                  </div>
-                  <div class="input-text">
-                    <label class="input-title" data-lang="label-language-convert">shahar kaa naam</label>
-                    <input type="text" id="cityTextRegional" class="disabled-input" placeholder="Regional Language">
-                  </div>
-                  <p class="field-error">Please enter city name</p>
+
+              <div class="input-wrapper row" id="cityNameField">
+                <div class="input-text">
+                  <label class="input-title">City <span class="star">*</span></label>
+                  <input type="text" id="cityNameText" data-lang="language-convert" placeholder="Enter in English">
                 </div>
+                <div class="input-text">
+                  <label class="input-title" data-lang="label-language-convert">shahar kaa naam</label>
+                  <input type="text" id="cityTextRegional" class="disabled-input" placeholder="Regional Language">
+                </div>
+                <span class="field-status-icon "></span>
+                <p class="field-error">Please enter city name</p>
               </div>
-              <div class="input-wrapper">
-                <div class="row">
-                  <div class="input-text">
-                    <label class="input-title">Geographical location of school, if available</label>
-                    <input type="text" id="geographicalText" data-lang="language-convert" placeholder="Enter in English">
-                    <span class="fa fa-location-arrow input-icon"></span>
-                  </div>
-                  <div class="input-text">
-                    <label class="input-title" data-lang="label-language-convert">skool kaa bhaugolik pataa, agar maalum ho</label>
-                    <input type="text" id="geographicalTextRegional" class="disabled-input" placeholder="Regional Language">
-                  </div>
+
+              <div class="input-wrapper row">
+                <div class="input-text">
+                  <label class="input-title">Geographical location of school, if available</label>
+                  <input type="text" id="geographicalText" data-lang="language-convert" placeholder="Enter in English">
+                  <span class="fa fa-location-arrow input-icon"></span>
                 </div>
+                <div class="input-text">
+                  <label class="input-title" data-lang="label-language-convert">skool kaa bhaugolik pataa, agar maalum ho</label>
+                  <input type="text" id="geographicalTextRegional" class="disabled-input" placeholder="Regional Language">
+                </div>
+                <span class="field-status-icon "></span>
               </div>
             </section>
+
             <!-- Connect -->
             <section class="academic">
               <h3 class="section-title">Connect</h3>
-              <div class="input-wrapper contact-numbers">
+              <div class="input-wrapper row contact-numbers" id="officeContactNumbersFields">
                 <label class="input-title">Office/Head of school <span class="star">*</span></label>
-                <div class="input-code-wrapper">
-                  <div class="input-code">
-                    <input type="number" name="std-code" maxlength="1" placeholder="x">
-                    <input type="number" name="std-code" maxlength="1" placeholder="x">
-                    <input type="number" name="std-code" maxlength="1" placeholder="x">
+                <div id="officePhoneNumberText" class="row">
+                  <div class="input-code-wrapper">
+                    <div class="input-code">
+                      <input type="number" name="std-code" maxlength="1" placeholder="x">
+                      <input type="number" name="std-code" maxlength="1" placeholder="x">
+                      <input type="number" name="std-code" maxlength="1" placeholder="x">
+                    </div>
+                    <span>STD code</span>
                   </div>
-                  <span>STD code</span>
-                </div>
-                <div class="input-code-wrapper">
-                  <div class="input-code">
-                    <input type="number" name="phone-num" maxlength="1" placeholder="x">
-                    <input type="number" name="phone-num" maxlength="1" placeholder="x">
-                    <input type="number" name="phone-num" maxlength="1" placeholder="x">
-                    <input type="number" name="phone-num" maxlength="1" placeholder="x">
-                    <input type="number" name="phone-num" maxlength="1" placeholder="x">
-                    <input type="number" name="phone-num" maxlength="1" placeholder="x">
+                  <div class="input-code-wrapper">
+                    <div class="input-code">
+                      <input type="number" name="phone-num" maxlength="1" placeholder="x">
+                      <input type="number" name="phone-num" maxlength="1" placeholder="x">
+                      <input type="number" name="phone-num" maxlength="1" placeholder="x">
+                      <input type="number" name="phone-num" maxlength="1" placeholder="x">
+                      <input type="number" name="phone-num" maxlength="1" placeholder="x">
+                      <input type="number" name="phone-num" maxlength="1" placeholder="x">
+                    </div>
+                    <span>Phone number</span>
                   </div>
-                  <span>Phone number</span>
                 </div>
-                <div class="input-code-wrapper mobile-number">
+
+                <div class="input-code-wrapper mobile-number" id="officeMobileNumberText">
                   <div class="input-code">
                     <input type="number" name="mobile-num" maxlength="1" placeholder="x">
                     <input type="number" name="mobile-num" maxlength="1" placeholder="x">
@@ -346,31 +357,34 @@
                   </div>
                   <span>Mobile number</span>
                 </div>
+                <span class="field-status-icon "></span>
                 <p class="field-error">Please enter valid phone and mobile number</p>
               </div>
 
-              <div class="input-wrapper contact-numbers">
-                <label class="input-title">Respondant</label>
-                <div class="input-code-wrapper">
-                  <div class="input-code">
-                    <input type="number" name="std-code" maxlength="1" placeholder="x">
-                    <input type="number" name="std-code" maxlength="1" placeholder="x">
-                    <input type="number" name="std-code" maxlength="1" placeholder="x">
+              <div class="input-wrapper row contact-numbers" id="respondantContactNumbersFields">
+                <label class="input-title">Respondant <span class="star">*</span></label>
+                <div id="respondantPhoneNumberText" class="row">
+                  <div class="input-code-wrapper">
+                    <div class="input-code">
+                      <input type="number" name="std-code" maxlength="1" placeholder="x">
+                      <input type="number" name="std-code" maxlength="1" placeholder="x">
+                      <input type="number" name="std-code" maxlength="1" placeholder="x">
+                    </div>
+                    <span>STD code</span>
                   </div>
-                  <span>STD code</span>
-                </div>
-                <div class="input-code-wrapper">
-                  <div class="input-code">
-                    <input type="number" name="phone-num" maxlength="1" placeholder="x">
-                    <input type="number" name="phone-num" maxlength="1" placeholder="x">
-                    <input type="number" name="phone-num" maxlength="1" placeholder="x">
-                    <input type="number" name="phone-num" maxlength="1" placeholder="x">
-                    <input type="number" name="phone-num" maxlength="1" placeholder="x">
-                    <input type="number" name="phone-num" maxlength="1" placeholder="x">
+                  <div class="input-code-wrapper">
+                    <div class="input-code">
+                      <input type="number" name="phone-num" maxlength="1" placeholder="x">
+                      <input type="number" name="phone-num" maxlength="1" placeholder="x">
+                      <input type="number" name="phone-num" maxlength="1" placeholder="x">
+                      <input type="number" name="phone-num" maxlength="1" placeholder="x">
+                      <input type="number" name="phone-num" maxlength="1" placeholder="x">
+                      <input type="number" name="phone-num" maxlength="1" placeholder="x">
+                    </div>
+                    <span>Phone number</span>
                   </div>
-                  <span>Phone number</span>
                 </div>
-                <div class="input-code-wrapper mobile-number">
+                <div class="input-code-wrapper mobile-number" id="respondantMobileNumberText">
                   <div class="input-code">
                     <input type="number" name="mobile-num" maxlength="1" placeholder="x">
                     <input type="number" name="mobile-num" maxlength="1" placeholder="x">
@@ -385,28 +399,28 @@
                   </div>
                   <span>Mobile number</span>
                 </div>
+                <span class="field-status-icon  "></span>
                 <p class="field-error">Please enter valid phone and mobile number</p>
               </div>
 
-              <div class="input-wrapper">
+              <div class="input-wrapper row" id="schoolEmailIDField">
                 <label class="input-title">School Email <span class="star">*</span></label>
-                <div class="row">
-                  <div class="input-text">
-                    <input type="email" class="form-control" name="school-mail" placeholder="eg:abc@domainname.com">
-                    <span class="fa fa-envelope input-icon"></span>
-                  </div>
-                  <p class="field-error">Please enter valid email ID</p>
+                <div class="input-text">
+                  <input type="email" id="schoolEmailIDText" class="form-control" name="school-mail" placeholder="eg:abc@domainname.com">
+                  <span class="fa fa-envelope input-icon"></span>
                 </div>
+                <span class="field-status-icon  "></span>
+                <p class="field-error">Please enter valid email ID</p>
               </div>
-              <div class="input-wrapper">
+
+              <div class="input-wrapper row" id="schoolWebsiteField">
                 <label class="input-title">School Website <span class="star">*</span></label>
-                <div class="row">
-                  <div class="input-text">
-                    <input type="text" name="school-website" placeholder="eg:www.schoolname.com">
-                    <span class="fa fa-globe input-icon"></span>
-                  </div>
-                  <p class="field-error">Please enter valid email ID</p>
+                <div class="input-text">
+                  <input type="text" id="schoolWebsiteText" name="school-website" placeholder="eg:www.schoolname.com">
+                  <span class="fa fa-globe input-icon"></span>
                 </div>
+                <span class="field-status-icon  "></span>
+                <p class="field-error">Please enter school website url</p>
               </div>
             </section>
             <div class="action row">

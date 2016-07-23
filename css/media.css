@@ -33,6 +33,10 @@
     .input-text input {
         margin-bottom: 20px;
     }
+
+    .input-text span.input-icon {
+        bottom: 32px;
+    }
 }
 
 @media only screen and (max-width: 1000px) {
