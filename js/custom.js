@@ -271,21 +271,66 @@ $(document).ready(function(){
             // main function call 
             schoolParticularPageStatus();
         });
+
+        $('#schoolParticularPage input').on('focus', function(){
+            $(this).attr('placeholder', '');
+        });
+
+        /* tiny input box on blur */
+        function tinyInputNextFocus(inputsBlock, thisEle){
+           var inputVal = thisEle.val().length;
+            var thisIndex = thisEle.attr('data-index');
+            thisIndex++;
+            if(inputVal > 0){
+                thisEle.blur();
+                inputsBlock.map(function(item, index){
+                    if(inputsBlock[item].getAttribute('data-index') == thisIndex){
+                       inputsBlock[item].focus();
+                    }; 
+                })
+            } 
+        }
+
+        uDiseCodeEle.on('keyup', function(){
+            var thisEle = $(this);
+            tinyInputNextFocus(uDiseCodeEle, thisEle);
+        });
+
+        academicYearEle.on('keyup', function(){
+            var thisEle = $(this);
+            tinyInputNextFocus(academicYearEle, thisEle);
+        });
+
+        villagePinCodeEle.on('keyup', function(){
+            var thisEle = $(this);
+            tinyInputNextFocus(villagePinCodeEle, thisEle);
+        });
+
+        officePhoneNumberEle.on('keyup', function(){
+            var thisEle = $(this);
+            tinyInputNextFocus(officePhoneNumberEle, thisEle);
+        });
+
+        officeMobileNumberEle.on('keyup', function(){
+            var thisEle = $(this);
+            tinyInputNextFocus(officeMobileNumberEle, thisEle);
+        });
+
+        respondantPhoneNumberEle.on('keyup', function(){
+            var thisEle = $(this);
+            tinyInputNextFocus(respondantPhoneNumberEle, thisEle);
+        });
+
+        respondantMobileNumberEle.on('keyup', function(){
+            var thisEle = $(this);
+            tinyInputNextFocus(respondantMobileNumberEle, thisEle);
+        });
+        
         
     /* END School particular page form validation*/
     
     })();
 /* END page form validation*/
-
-
-    /* input single numeric value */
-    $('.input-code input').on('keyup', function(){
-        var inputVal = $(this).val().length;
-        if(inputVal > 0){
-            $(this).blur();
-            $(this).next().focus();
-        }
-    });
 
     // Toggle hide/show language
     $("#toggle").click(function(){
