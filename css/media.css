@@ -40,7 +40,7 @@
 }
 
 @media only screen and (max-width: 1000px) {
-    .inner-form-wrapper input[type=number] {
+    .input-code-wrapper input[type=number] {
         width: 50px;
     }    
 

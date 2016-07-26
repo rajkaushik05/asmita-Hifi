@@ -249,7 +249,7 @@ body {
     color: #9d9d9d;
 }
 
-.inner-form-wrapper input[type=number] {
+.input-code-wrapper input[type=number] {
     width: 65px;
     height: 40px;
     background: #f6f6f6;
@@ -261,7 +261,7 @@ body {
     transition-property: border-bottom;
 }
 
-.inner-form-wrapper input[type=number]:last-child {
+.input-code-wrapper input[type=number]:last-child {
     border-right: 0;
 }
 

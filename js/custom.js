@@ -112,6 +112,18 @@ $(document).ready(function(){
         var schoolEmailIDEle = $('#schoolEmailIDField #schoolEmailIDText');
         var schoolWebsiteEle = $('#schoolWebsiteField #schoolWebsiteText');
 
+        // input only one number in number fileds validation
+
+        $('.input-code-wrapper input').on('keypress', function(){
+            if($(this).val().length >= 1){
+                return false
+            }
+        });
+
+        /*$('.input-code-wrapper input').on('focus', function(){
+            $(this).val("");
+        });*/
+
         // blur on individual element hide/show error or success validation 
         function thisFieldValidation(status, ele){
             if(status > 0){
