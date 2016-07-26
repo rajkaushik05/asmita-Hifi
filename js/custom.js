@@ -351,10 +351,12 @@ $(document).ready(function(){
     });
 
     // Toggle active class in languages
-    $('.languages li a').click(function(e) {
-        e.preventDefault(); //prevent the link from being followed
-        $('.languages li a').removeClass('active');
+    $('.languages li').click(function() {
+        var langSelected = $(this).text();
+        $('#toggle span').text(langSelected);
+        $('.languages li').removeClass('active');
         $(this).addClass('active');
+        $("#more-lang").slideToggle();
     });
 
     
